@@ -8,6 +8,7 @@ class ThreeBackGround {
   constructor() {
     this._render = this._render.bind(this);
     window.addEventListener('mousemove', this._handleMousemove.bind(this));
+    this.timer = 0;
     return this.initThree().addObjects();
   }
 
@@ -34,8 +35,8 @@ class ThreeBackGround {
       geometry.faces[0] = new THREE.Face3(0,1,2);
 
       const color = new THREE.Color(0x3399ff);
-      color.offsetHSL(Math.random() / 2 - 1, 0, 0.2);
-      const material =  new THREE.MeshBasicMaterial({ color, blending: THREE.AdditiveBlending, wireframe: Math.random() > 0.8 });
+      color.offsetHSL(0, 0, Math.random() / 3);
+      const material =  new THREE.MeshBasicMaterial({ alpha: Math.random() / 2, color, wireframe: Math.random() > 0.8 });
       const triangle =  new THREE.Mesh(geometry, material);
 
       triangle.position.set(rand(RANGE), rand(RANGE), rand(RANGE));
@@ -47,8 +48,8 @@ class ThreeBackGround {
       const geometry = new THREE.BoxGeometry(1, 1, 1);
 
       const color = new THREE.Color(0x3399ff);
-      color.offsetHSL(Math.random() / 2 - 1, 0, 0.2);
-      const material =  new THREE.MeshBasicMaterial({ color, blending: THREE.AdditiveBlending, wireframe: Math.random() > 0.8 });
+      color.offsetHSL(0, 0, Math.random());
+      const material =  new THREE.MeshBasicMaterial({ color, alpha: Math.random() / 2, blending: THREE.AdditiveBlending, wireframe: Math.random() > 0.8 });
       const box =  new THREE.Mesh(geometry, material);
 
       box.position.set(rand(RANGE), rand(RANGE), rand(RANGE));
@@ -65,6 +66,7 @@ class ThreeBackGround {
     this.camera.position.set(newPosition.x, newPosition.y - window.scrollY / 30, newPosition.z);
     this.renderer.render(this.scene, this.camera);
     window.requestAnimationFrame(this._render);
+    this.timer++;
   }
 
   _handleMousemove(event) {
