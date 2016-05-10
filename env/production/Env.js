@@ -1,0 +1,1 @@
+export const COGNITO_IDENTITY_POOL_ID = 'ap-northeast-1:0856beb8-fca3-4d58-beab-401fa2e7be36';
