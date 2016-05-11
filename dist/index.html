@@ -1,10 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+<!--[if lt IE 9]><html class="ie" lang="ja"><![endif]-->
+<!--[if !(lt IE 9)  ]><!--><html lang="ja"><!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+	<meta charset="UTF-8"/>
+	<meta name="robots" content="noindex,nofollow" />
+	<meta name="viewport" content="width=device-width; initial-scale=1" />
+	<title>three.js DEMO | HAL2016 </title>
+	<style type="text/css">
+		* {margin: 0; padding: 0;}
+		img {max-width: 100%; vertical-align: top;}
+		.cont {text-align: center;}
+		.bg01, .bg02, .bg03, .bg04, .bg05, .bg06 {width: 100%;}
+		.bg01 {background-color: #000;}
+		.bg02 {
+            position: relative;
+        }
+		.bg03 {background-color: #1c1c1c;}
+		.bg04 {background-color: #ffd300;}
+		.bg05 {background-color: #ff5bb4;}
+		.bg06 {background-color: #ffffff;}
+        .three {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+	</style>
 </head>
+
 <body>
-<script type="text/javascript" src="./js/app.js" charset="utf-8"></script>
+	<div class="wrapper"><!-- wrapperStart -->
+		<div class="cont bg01"><img src="img/01.jpg" alt=""></div>
+		<div class="cont bg02">
+            <img src="img/02.png" alt="">
+            <canvas class="three"></canvas>
+        </div>
+		<div class="cont bg03"><img src="img/03.png" alt=""></div>
+		<div class="cont bg04"><img src="img/04.png" alt=""></div>
+		<div class="cont bg05"><img src="img/05.png" alt=""></div>
+		<div class="cont bg06"><img src="img/06.jpg" alt=""></div>
+	</div><!-- wrapperEnd -->
+    <script src="js/app.js"></script>
 </body>
 </html>
